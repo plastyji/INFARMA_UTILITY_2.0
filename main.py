@@ -118,11 +118,57 @@ class Application:
                     button.place(x=230, y=190)
                     ctk.CTkButton(master=new_framee, text="Voltar", text_color="white", width=250, command=rollback).place(x=230, y=230)
             def inserttls():
-                # try:
+                try:
                     DB.Querys.emitirnota()
                     msg1 = messagebox.showinfo(title="Sucesso", message="Informação atualizada com sucesso!")
-                # except:
-                #     msg1= messagebox.showerror(title="Erro", message="Erro ao realizar as alterações \nVerifique os log")
+                except:
+                    msg1= messagebox.showerror(title="Erro", message="Erro ao realizar as alterações \nVerifique os log")
+            def reducelog():
+                try:
+                    DB.Querys.reduz_banco()
+                    msg1 = messagebox.showinfo(title="Sucesso", message="Informação atualizada com sucesso!")
+                except:
+                    msg1= messagebox.showerror(title="Erro", message="Erro ao realizar as alterações \nVerifique os log")
+            def optionscx():
+                new_frame.pack_forget()
+                new_framee = ctk.CTkFrame(master=janela, width=700, height=400)
+                new_framee.pack(side=RIGHT)
+                def rollback():
+                    new_framee.pack_forget()
+                    nextwindow()
+                def alter1():
+                    try:
+                        DB.Querys.versaopdv1()
+                        msg1 = messagebox.showinfo(title="Sucesso", message="Informação atualizada com sucesso!")
+                    except:
+                        msg1= messagebox.showerror(title="Erro", message="Erro ao realizar as alterações \nVerifique os log")
+                def alter2():
+                    try:
+                        DB.Querys.versaopdv2()
+                        msg1 = messagebox.showinfo(title="Sucesso", message="Informação atualizada com sucesso!")
+                    except:
+                        msg1= messagebox.showerror(title="Erro", message="Erro ao realizar as alterações \nVerifique os log")
+                def alterexpress():
+                    try:
+                        DB.Querys.pdv_express()
+                        msg1 = messagebox.showinfo(title="Sucesso", message="Informação atualizada com sucesso!")
+                    except:
+                        msg1= messagebox.showerror(title="Erro", message="Erro ao realizar as alterações \nVerifique os log")                
+
+
+                ctk.CTkLabel(master=new_framee, text="Escolha uma opção para caixa", font=("Roboto", 25)).place(x=180, y=5)
+                ctk.CTkButton(master=new_framee, text="Alterar PDV 1.0", width=250, command=alter1).place(x=180, y=85)  
+                ctk.CTkButton(master=new_framee, text="Alterar PDV 2.0", width=250, command=alter2).place(x=180, y=125)  
+                ctk.CTkButton(master=new_framee, text="Alterar PDV EXPRESS", width=250, command=alterexpress).place(x=180, y=165)
+                ctk.CTkButton(master=new_framee, text="Voltar", width=250, command=rollback).place(x=180, y=205) 
+            def createuser():
+                try:
+                    DB.Querys.criausuario()
+                    msg1 = messagebox.showinfo(title="Sucesso", message="Informação atualizada com sucesso!")
+                except:
+                    msg1= messagebox.showerror(title="Erro", message="Erro ao realizar as alterações \nVerifique os log")
+            
+            
             janela.msg = ctk.CTkLabel(master=new_frame, text="Escolha uma opção abaixo", font=("Roboto", 25))
             janela.msg.place(x=200, y=5)
             ctk.CTkButton(master=new_frame, text="Conectar no banco de dados", width=250, command=connectdatabase).place(x=95, y=85)            
@@ -130,10 +176,10 @@ class Application:
             ctk.CTkButton(master=new_frame, text="Ajuste registro MS", width=250, command=alterregsms).place(x=95, y=125)
             ctk.CTkButton(master=new_frame, text="Coloca a chave vinculação AC", width=250, command=insertass).place(x=355, y=125)
             ctk.CTkButton(master=new_frame, text="Primeira emissão Nf-e (TLS)", width=250, command=inserttls).place(x=95, y=165)
-            ctk.CTkButton(master=new_frame, text="Reduzir Log Do Banco", width=250).place(x=355, y=165)
+            ctk.CTkButton(master=new_frame, text="Reduzir Log Do Banco", width=250, command=reducelog).place(x=355, y=165)
             ctk.CTkButton(master=new_frame, text="Opções Nf", width=250).place(x=95, y=205)
-            ctk.CTkButton(master=new_frame, text="Cria usuario(VMDApp)", width=250).place(x=355, y=205)
-            ctk.CTkButton(master=new_frame, text="Opções caixa", width=250).place(x=95, y=245)
+            ctk.CTkButton(master=new_frame, text="Cria usuario(VMDApp)", width=250, command=createuser).place(x=355, y=205)
+            ctk.CTkButton(master=new_frame, text="Opções caixa", width=250, command=optionscx).place(x=95, y=245)
             ctk.CTkButton(master=new_frame, text="Opções de plano de conta contabil", width=250).place(x=355, y=245)
             ctk.CTkButton(master=new_frame, text="Alterações produto", width=250).place(x=95, y=285)
             ctk.CTkButton(master=new_frame, text="Outras Opções", width=250).place(x=355, y=285)

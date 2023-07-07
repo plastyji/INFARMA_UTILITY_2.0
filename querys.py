@@ -87,3 +87,81 @@ class Querys():
         except Exception as e:
             logging.exception('Erro ao Inserir o TLS!')
             logging.warning(date_time()+e) 
+    def alterar_database():
+        conn =Querys.connectBanco()
+        cursor = conn.cursor()
+        cursor.execute("ALTER DATABASE VMD SET RECOVERY SIMPLE")
+        conn.commit()
+    def alterar_databasefull():
+        conn = Querys.connectBanco()
+        cursor = conn.cursor()
+        cursor.execute("ALTER DATABASE VMD SET RECOVERY FULL")
+        cursor.commit()
+    def reduz_banco():
+        try:
+            conn = Querys.connectBanco()
+            Querys.alterar_database()
+            cursor = conn.cursor()
+            cursor.execute("DBCC SHRINKFILE('VMD_LOG', TRUNCATEONLY)")
+            cursor.commit()
+            Querys.alterar_databasefull()
+            conn.close()
+        except Exception as e:
+            logging.exception('Erro ao Reduzir o log!')
+            logging.warning(date_time()+e)     
+    def versaopdv2():
+        try:       
+        
+            sql = (f"update lojas set par_pdvversao='2.0' where cod_loja={cod_loja}")            
+            conn = Querys.connectBanco()
+            cursor = conn.cursor()
+            cursor.execute(sql)
+            cursor.commit()
+            return        
+            
+        except Exception as e:
+            logging.exception('Erro ao alterar a versão do pdv!')
+            logging.warning(date_time()+e)  
+    #Alterar a versão do PDV para 1.0#
+    def versaopdv1():
+        try:          
+            sql = (f"update lojas set par_pdvversao='1.0' where cod_loja={cod_loja}")
+            conn = Querys.connectBanco()
+            cursor = conn.cursor()
+            cursor.execute(sql)
+            cursor.commit()
+            return           
+        except Exception as e:
+            logging.exception('Erro ao alterar a versão do pdv!')
+            logging.warning(date_time()+e)
+    def pdv_express():
+        try:       
+    
+            sql = (f"update lojas set par_pdvversao='2.0' where cod_loja={cod_loja}")
+            conn = Querys.connectBanco()
+            cursor = conn.cursor()
+            cursor.execute(sql)
+            cursor.execute(f"UPDATE LOJAS SET Flg_PdvExp='1' WHERE COD_LOJA={cod_loja}")
+            cursor.commit()
+            return        
+        except Exception as e:
+            logging.exception('Erro ao alterar a versão do pdv!')
+            logging.warning(date_time()+e)        
+    def criausuario():
+        try:  
+            if ('conn = connectBanco()'):
+                conn = Querys.connectBanco()          
+                sql = (
+                    f"if not exists (select * from master..syslogins where name = N'VMDApp')EXEC sp_addlogin N'VMDApp', N'VMD22041748', N'{dataBase}', N'Português'"  
+                    "exec sp_addsrvrolemember N'VMDApp',"
+                    "sysadmin "
+                    "if not exists (select * from sysusers where name = N'VMDApp' and uid < 16382)   EXEC sp_grantdbaccess N'VMDApp', N'VMDApp'"
+                        )
+                                
+                cursor = conn.cursor()
+                cursor.execute(sql)
+                cursor.commit()
+                return
+        except Exception as e:
+            logging.exception('Erro ao alterar a versão do pdv!')
+            logging.warning(date_time()+e) 
