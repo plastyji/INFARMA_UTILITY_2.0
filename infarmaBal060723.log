@@ -1,0 +1,30 @@
+ERROR:root:Verifique as informações do banco de dados
+Traceback (most recent call last):
+  File "C:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 34, in connectBanco
+    conn = pyodbc.connect(f"DRIVER={driveOdbc};Server={hostName};DATABASE={dataBase};")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server inexistente ou acesso negado. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+ERROR:root:Verifique as informações do banco de dados
+Traceback (most recent call last):
+  File "C:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 34, in connectBanco
+    conn = pyodbc.connect(f"DRIVER={driveOdbc};Server={hostName};DATABASE={dataBase};", timeout=15)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server inexistente ou acesso negado. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+ERROR:root:Verifique as informações do banco de dados
+Traceback (most recent call last):
+  File "C:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 34, in connectBanco
+    conn = pyodbc.connect(f"DRIVER={driveOdbc};Server={hostName};DATABASE={dataBase};", timeout=5)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server inexistente ou acesso negado. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+ERROR:root:Verifique as informações do banco de dados
+Traceback (most recent call last):
+  File "C:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 34, in connectBanco
+    conn = pyodbc.connect(f"DRIVER={driveOdbc};Server={hostName};DATABASE={dataBase};", timeout=2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server inexistente ou acesso negado. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')
+ERROR:root:Verifique as informações do banco de dados
+Traceback (most recent call last):
+  File "C:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 34, in connectBanco
+    conn = pyodbc.connect(f"DRIVER={driveOdbc};Server={hostName};DATABASE={dataBase};", timeout=1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pyodbc.OperationalError: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server inexistente ou acesso negado. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (53)')

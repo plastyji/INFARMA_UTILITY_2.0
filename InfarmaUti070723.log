@@ -1,0 +1,15 @@
+ERROR:root:Erro ao Vincular chave AC!
+Traceback (most recent call last):
+  File "C:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 83, in emitirnota
+    cursor.execute(sql)
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violação da restrição PRIMARY KEY 'PK_FS_PARAM'. Não é possível inserir a chave duplicada no objeto 'dbo.FS_PARAM'. O valor de chave duplicada é (23, NFE_HAB_TLS). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]A instrução foi finalizada. (3621)")
+ERROR:root:Erro ao Vincular chave AC!
+Traceback (most recent call last):
+  File "c:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 83, in emitirnota
+    cursor.execute(sql)
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violação da restrição PRIMARY KEY 'PK_FS_PARAM'. Não é possível inserir a chave duplicada no objeto 'dbo.FS_PARAM'. O valor de chave duplicada é (23, NFE_HAB_TLS). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]A instrução foi finalizada. (3621)")
+ERROR:root:Erro ao Inserir o TLS!
+Traceback (most recent call last):
+  File "c:\Users\manoel.diniz\OneDrive - infarma.com.br\Área de Trabalho\PROJETO\INFAMRA UTILITY 2.0\querys.py", line 83, in emitirnota
+    cursor.execute(sql)
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC SQL Server Driver][SQL Server]Violação da restrição PRIMARY KEY 'PK_FS_PARAM'. Não é possível inserir a chave duplicada no objeto 'dbo.FS_PARAM'. O valor de chave duplicada é (23, NFE_HAB_TLS). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC SQL Server Driver][SQL Server]A instrução foi finalizada. (3621)")
